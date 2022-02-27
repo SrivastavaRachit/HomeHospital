@@ -1,12 +1,13 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Main from "./components/main";
-import Home from "./components/main/home";
+import Home from "./components/main/Home";
 import Login from "./components/main/Login";
-import User from "./components/user";
-import path from "node:path/posix";
-import Footer from "./components/main/footer";
-import Header from "./components/user/header";
+import Header from "./components/main/Header";
+import Footer from "./components/main/Footer";
+// import User from "./components/user";
+// import path from "node:path/posix";
+// import Header from "./components/user/header";
 
 function App() {
   return (
@@ -14,29 +15,23 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<Main />} path="main">
-            <Route element={<Home />} path="home" />
-          </Route>
-          <Route element={<Main />} path="main">
+            <Route element={<Home />} path="Home" />
             <Route element={<Login/>} path="Login" />
+            <Route element={<Header/>} path="Header"/>
+            <Route element={<Footer/>} path="Footer"/>
+            <Route element={<Signuo/>} path="Signup"/>
           </Route>
-          <Route element={<Main/>} path="main">
-            <Route element={<header/>} path="header"/>
-          </Route>
-          <Route element={<Main/>} path="main">
-            <Route element={<footer/>} path="footer"/>
-          </Route>
-          <Route element={<Main/>} path="main">
-            <Route element={<signuo/>} path="signup"/>
+          {/*
           </Route>
           <Route element={<Main/>} path="main">
             <Route element={<resetPassword/>} path="resetPassword"/>
-          </Route>
+          </Route> */}
 
 
-          <Route element={<Admin/>} path="admin">
+          {/* <Route element={<Admin/>} path="admin">
             <Route element={<AdminDashboard />} path="dashboard" />
-          </Route>
-          <Route element={<Admin/>} path="admin">
+          </Route> */}
+          {/* <Route element={<Admin/>} path="admin">
             <Route element={<addequipment/>} path="addequipment" />
           </Route>
           <Route element={<Admin/>} path="admin">
@@ -52,13 +47,13 @@ function App() {
 
           <Route element={<User/>} path="user">
             <Route element={<AdminDashboard/>} path="dashboard"/>
-          </Route>
-          <Route element={<User/>} path="user">
+          </Route> */}
+          {/* <Route element={<User/>} path="user">
             <Route element={<Footer/>} path="footer"/>
           </Route>
           <Route element={<User/>} path="user">
             <Route element={<Header/>} path="header"/>
-          </Route>
+          </Route> */}
         </Routes>
       </BrowserRouter>
     </div>
