@@ -5,6 +5,7 @@ import Home from "./components/main/Home";
 import Login from "./components/main/Login";
 import Header from "./components/main/Header";
 import Footer from "./components/main/Footer";
+import SignUp from "./components/main/SignUp";
 // import User from "./components/user";
 // import path from "node:path/posix";
 // import Header from "./components/user/header";
@@ -15,11 +16,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<Main />} path="main">
-            <Route element={<Home />} path="Home" />
-            <Route element={<Login/>} path="Login" />
-            <Route element={<Header/>} path="Header"/>
+            <Route element={<Home />} path="Home"/>
+            <Route element={<Login/>} path="Login"/>
+             <Route element={<Header/>} path="Header"/>
             <Route element={<Footer/>} path="Footer"/>
-            <Route element={<Signuo/>} path="Signup"/>
+            <Route element={<SignUp/>} path="SignUp"/>
           </Route>
           {/*
           </Route>

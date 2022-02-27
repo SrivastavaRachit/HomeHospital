@@ -12,7 +12,8 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+
+const pages = ['Products', 'Equipment', ''];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Header = () => {
@@ -44,7 +45,7 @@ const Header = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            LOGO
+            HomeHospital
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -89,7 +90,7 @@ const Header = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            LOGO
+            Products
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
