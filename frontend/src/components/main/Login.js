@@ -12,6 +12,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
+import {Formik} from 'formik';
+import app_config from '../../config';
 
 function Copyright(props) {
   return (
@@ -29,15 +31,31 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function Login() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+
+  const userForm ={
+    email:'',
+    password:''
+  }
+  const url = app_config.api_url;
+  const loginSubmit = {formdata} => {
+    fetch(url+'/user/add',{
+      method:'POST',
+      body:JSON.stringify(formdata),
+      headers:{'ContentType':'application/json'}
+    })
+    .then((res )=> res.json()).then(data =>{
+      console.log(data);
+    })
+  }
+  // const handleSubmit = (event) => {
+    // event.preventDefault();
+  //   const data = new FormData(event.currentTarget);
+  //   // eslint-disable-next-line no-console
+  //   console.log({
+  //     email: data.get('email'),
+  //     password: data.get('password'),
+  //   });
+  // };
 
   return (
     <ThemeProvider theme={theme}>
@@ -73,6 +91,8 @@ export default function Login() {
             <Typography component="h1" variant="h5">
               Sign in
             </Typography>
+            <Formik initialValues={useForm} onSubmit={loginSubmit}>
+              {({values, handleChange, handleSubmit}) => (
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
                 margin="normal"
@@ -120,6 +140,8 @@ export default function Login() {
               </Grid>
               <Copyright sx={{ mt: 5 }} />
             </Box>
+            )}
+            </Formik>
           </Box>
         </Grid>
       </Grid>
