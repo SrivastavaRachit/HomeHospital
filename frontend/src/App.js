@@ -23,6 +23,7 @@ function App() {
             <Route element={<Footer/>} path="Footer"/>
             <Route element={<SignUp/>} path="SignUp"/>
             <Route element={<Equipment/>} path="Equipment"/>
+            
           </Route>
           {/*
           </Route>
