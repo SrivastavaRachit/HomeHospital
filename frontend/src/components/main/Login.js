@@ -31,13 +31,14 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function Login() {
+  const url = app_config.api_url;
 
   const userForm ={
     email:'',
     password:''
   }
-  const url = app_config.api_url;
-  const loginSubmit = {formdata} => {
+  const loginSubmit = (formdata) => {
+    console.log(formdata);
     fetch(url+'/user/add',{
       method:'POST',
       body:JSON.stringify(formdata),
@@ -91,7 +92,7 @@ export default function Login() {
             <Typography component="h1" variant="h5">
               Sign in
             </Typography>
-            <Formik initialValues={useForm} onSubmit={loginSubmit}>
+            <Formik initialValues={userForm} onSubmit={loginSubmit}>
               {({values, handleChange, handleSubmit}) => (
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField

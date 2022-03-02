@@ -1,11 +1,12 @@
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Main from "./components/main";
 import Home from "./components/main/Home";
 import Login from "./components/main/Login";
 import Header from "./components/main/Header";
 import Footer from "./components/main/Footer";
 import SignUp from "./components/main/SignUp";
+import Equipment from "./components/main/Equipment";
 // import User from "./components/user";
 // import path from "node:path/posix";
 // import Header from "./components/user/header";
@@ -21,6 +22,7 @@ function App() {
              <Route element={<Header/>} path="Header"/>
             <Route element={<Footer/>} path="Footer"/>
             <Route element={<SignUp/>} path="SignUp"/>
+            <Route element={<Equipment/>} path="Equipment"/>
           </Route>
           {/*
           </Route>
@@ -55,6 +57,7 @@ function App() {
           <Route element={<User/>} path="user">
             <Route element={<Header/>} path="header"/>
           </Route> */}
+          <Route exact element={<Navigate to="/main/home"/>} path=""/>
         </Routes>
       </BrowserRouter>
     </div>

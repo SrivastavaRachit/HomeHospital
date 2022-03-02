@@ -1,72 +1,25 @@
-// import React from 'react';
-// import '../../stylesheet/Home.css';
-//  function Home() {
-//     function bannerSwitcher() {
-//         next = ('.sec-1-input').filter(':checked').next('.sec-1-input');
-//         if (next.length) next.prop('checked', true);
-//         else ('.sec-1-input').first().prop('checked', true);
-//       }
+import React from 'react'
+import '../../stylesheet/Home.css';
+import{Link} from 'react-router-dom'
+export default function Home() {
+  return (
+    <div>
+        <section class="hero">
+  <header id="header">
     
-//       var bannerTimer = setInterval(bannerSwitcher, 5000);
     
-//       ('nav .controls label').click(function() {
-//         clearInterval(bannerTimer);
-//         bannerTimer = setInterval(bannerSwitcher, 5000)
-//       });
-//   return (
-//     <div>
-// {/* //   <section id="section-1"> */}
-//     <div class="content-slider">
-//       <input type="radio" id="banner1" class="sec-1-input" name="banner" checked/>
-//       <input type="radio" id="banner2" class="sec-1-input" name="banner"/>
-//       <input type="radio" id="banner3" class="sec-1-input" name="banner"/>
-//       <input type="radio" id="banner4" class="sec-1-input" name="banner"/>
-//       <div class="slider">
-//         <div id="top-banner-1" class="banner">
-//           <div class="banner-inner-wrapper">
-//             <h2>Creative Template</h2>
-//             <h1>Welcome<br/>to MoGo</h1>
-//             <div class="line"></div>
-//             <div class="learn-more-button"><a href="#section-2">Learn More</a></div>
-//           </div>
-//         </div>
-//         <div id="top-banner-2" class="banner">
-//           <div class="banner-inner-wrapper">
-//             <h2>What We Do</h2>
-//             <h1>Great<br/>MoGo</h1>
-//             <div class="line"></div>
-//             <div class="learn-more-button"><a href="#section-4">Learn More</a></div>
-//           </div>
-//         </div>
-//         <div id="top-banner-3" class="banner">
-//           <div class="banner-inner-wrapper">
-//             <h2>Here We Are</h2>
-//             <h1>We Are<br/>MoGo</h1>
-//             <div class="line"></div>
-//             <div class="learn-more-button"><a href="#section-6">Learn More</a></div>
-//           </div>
-//         </div>
-//         <div id="top-banner-4" class="banner">
-//           <div class="banner-inner-wrapper">
-//             <h2>Our Contacts</h2>
-//             <h1>Welcome<br/>to MoGo</h1>
-//             <div class="line"></div>
-//             <div class="learn-more-button"><a href="#main-footer">Learn More</a></div>
-//           </div>
-//         </div>
-//       </div>
-//       <nav>
-//         <div class="controls">
-//           <label for="banner1"><span class="progressbar"><span class="progressbar-fill"></span></span><span>01</span> Intro</label>
-//           <label for="banner2"><span class="progressbar"><span class="progressbar-fill"></span></span><span>02</span> Work</label>
-//           <label for="banner3"><span class="progressbar"><span class="progressbar-fill"></span></span><span>03</span> About</label>
-//           <label for="banner4"><span class="progressbar"><span class="progressbar-fill"></span></span><span>04</span> Contacts</label>
-//         </div>
-//       </nav>
-//     </div>
-//   {/* </section> */}
-
-//     </div>
-//   )
-// }
-// export default Home;
+  </header>
+  <header class="hero-header">
+    <h1 class="hero-title">Home Hospital</h1>
+  </header>
+  <footer class="hero-footer">
+    <Link class="button button-primary" to="/main/Login">Login</Link>
+    <Link class="button" to="/main/SignUp">SignUp</Link>
+  </footer>
+</section>
+<article>
+  
+</article>
+    </div>
+  )
+}
