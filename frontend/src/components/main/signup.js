@@ -14,6 +14,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import app_config from '../../config';
 import {Formik} from 'formik';
+import Swal from "sweetalert2";
 
 function Copyright(props) {
   return (
@@ -45,9 +46,15 @@ export default function SignUp() {
       body : JSON.stringify(formdata),
       headers : {'ContentType': 'application/json'}
     })
-    .then((res) => res.json()).then(data => {
+    .then((res )=> res.json()).then(data =>{
       console.log(data);
-    })
+      Swal.fire({
+        icon: "success",
+        title: "success",
+        text: "user Added Successfully",
+      });
+    });
+    
   }
 
   return (
