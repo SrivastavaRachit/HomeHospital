@@ -4,7 +4,7 @@ const port = 5000;
 
 const cors = require("cors");
 
-const userRouter = require("./router/userRouter");
+const userRouter = require("./routers/userRouter");
 
 app.use(
   cors({
