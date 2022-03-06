@@ -1,25 +1,25 @@
-// import { Card, CardContent, Container } from "@mui/material";
-// import { Formik } from "formik";
+import { Card, CardContent, Container } from "@mui/material";
+import { Formik } from "formik";
 
-// const AddEquipment = () => {
+const AddEquipment = () => {
 
-//     const equipmentForm = {
+    const equipmentForm = {
         
-//     }
+    }
 
-//   return (
-//     <Container>
-//         <Card>
-//             <CardContent>
-//                 <Formik>
-//                     {
-//                         ({values, }) => ()
-//                     }
-//                 </Formik>
-//             </CardContent>
-//         </Card>
-//     </Container>
-//   )
-// }
+  return (
+    <Container>
+        <Card>
+            <CardContent>
+                <Formik>
+                    {
+                        ({values, }) => ()
+                    }
+                </Formik>
+            </CardContent>
+        </Card>
+    </Container>
+  )
+}
 
-// export default AddEquipment;
+export default AddEquipment;

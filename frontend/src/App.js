@@ -10,6 +10,8 @@ import Equipment from "./components/main/Equipment";
 import Admin from "./components/admin";
 import AddEquipment from "./components/admin/addequipment";
 import AdminDashboard from "./components/admin/dashboard";
+import Product from "./components/main/Product";
+import NotFound from "./components/main/NotFound";
 // import User from "./components/user";
 // import path from "node:path/posix";
 // import Header from "./components/user/header";
@@ -26,6 +28,8 @@ function App() {
             <Route element={<Footer />} path="Footer" />
             <Route element={<SignUp />} path="SignUp" />
             <Route element={<Equipment />} path="Equipment" />
+            <Route element={<Product />} path="Product" />
+            <Route element={<NotFound />} path="NotFound" />
 
           </Route>
           {/*
@@ -65,6 +69,7 @@ function App() {
             <Route element={<Header/>} path="header"/>
           </Route> */}
           <Route exact element={<Navigate to="/main/home" />} path="" />
+          <Route exact element={<Navigate to="/main/NotFound" />} path="*" />
         </Routes>
       </BrowserRouter>
     </div>
