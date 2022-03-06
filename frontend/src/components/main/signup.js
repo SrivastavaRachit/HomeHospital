@@ -50,8 +50,8 @@ export default function SignUp() {
       console.log(data);
       Swal.fire({
         icon: "success",
-        title: "success",
-        text: "user Added Successfully",
+        title: "Success",
+        text: "User Added Successfully",
       });
     });
     
