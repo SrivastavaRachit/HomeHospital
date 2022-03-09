@@ -4,7 +4,7 @@ const schema = new mongoose.Schema({
   email: String,
   password: String,
   createdAt: { type: Date, default: new Date() },
-  isAdmin : { type: Date, default: false },
+  isAdmin : { type: Boolean, default: false },
 });
 
 const model = mongoose.model("users", schema);

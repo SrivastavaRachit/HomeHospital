@@ -12,6 +12,8 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
+import {useNavigate} from 'react-router-dom';
+
 
 const pages = ['Products', 'Equipment', ''];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -19,6 +21,8 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -96,7 +100,7 @@ const Header = () => {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={e => navigate()}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}
