@@ -6,12 +6,13 @@ import Login from "./components/main/Login";
 import Header from "./components/main/Header";
 import Footer from "./components/main/Footer";
 import SignUp from "./components/main/SignUp";
-import Equipment from "./components/main/Equipment";
+import BrowsEquipment from "./components/main/BrowsEquipment";
 import Admin from "./components/admin";
 import AddEquipment from "./components/admin/addequipment";
 import AdminDashboard from "./components/admin/dashboard";
 import Product from "./components/main/Product";
 import NotFound from "./components/main/NotFound";
+import EquipmentDetail from "./components/main/EquipmentDetail";
 // import User from "./components/user";
 // import path from "node:path/posix";
 // import Header from "./components/user/header";
@@ -27,7 +28,8 @@ function App() {
             <Route element={<Header />} path="Header" />
             <Route element={<Footer />} path="Footer" />
             <Route element={<SignUp />} path="SignUp" />
-            <Route element={<Equipment />} path="Equipment" />
+            <Route element={<BrowsEquipment />} path="BrowsEquipment" />
+            <Route element={<EquipmentDetail />} path="EquipmentDetail" />
             <Route element={<Product />} path="Product" />
             <Route element={<NotFound />} path="NotFound" />
 
