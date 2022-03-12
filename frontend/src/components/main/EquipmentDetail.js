@@ -1,8 +1,10 @@
 import React from 'react'
+import '../../stylesheet/EquipmentDetail.css';
 
 export default function EquipmentDetail() {
   return (
     <div>
+      <div className='cont'>
 <div class="card mb-3">
   <div class="row g-0">
     <div class="col-md-4">
@@ -16,6 +18,7 @@ export default function EquipmentDetail() {
       </div>
     </div>
   </div>
+</div>
 </div>
     </div>
   )
