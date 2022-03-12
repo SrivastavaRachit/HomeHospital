@@ -15,6 +15,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import app_config from '../../config';
 import {Formik} from 'formik';
 import Swal from "sweetalert2";
+import { Switch } from '@mui/material';
 
 function Copyright(props) {
   return (
@@ -37,7 +38,7 @@ export default function AddEquipment() {
     title: '' ,
     description: '' ,
     price: '',
-    rentable:' ',
+    rentable:false,
     tags: '',
   }
 
@@ -46,7 +47,7 @@ export default function AddEquipment() {
     fetch(url+'/equipment/add', {
       method : 'POST',
       body : JSON.stringify(formdata),
-      headers : {'ContentType': 'application/json'}
+      headers : {'Content-Type': 'application/json'}
     })
     .then((res )=> res.json()).then(data =>{
       console.log(data);
@@ -81,7 +82,7 @@ export default function AddEquipment() {
           </Typography>
           <Formik initialValues={userForm} onSubmit={addequipmentSubmit}>
       {({values, handleChange, handleSubmit}) => (
-        <Box component="form" noValidate onSubmit={addequipmentSubmit} sx={{ mt: 3 }}>
+        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6}>
             <TextField
@@ -118,17 +119,7 @@ export default function AddEquipment() {
               autoComplete="new-price"
             />
           </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              required
-              fullWidth
-              id="rentable"
-              label="rentable"
-              value={values.email}
-              onChange={handleChange}
-              autoComplete="rentable"
-            />
-          </Grid>  <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={12}>
             <TextField
               required
               fullWidth
@@ -138,7 +129,11 @@ export default function AddEquipment() {
               onChange={handleChange}
               autoComplete="tags"
             />
-          </Grid>
+          </Grid> 
+            <Switch id="rentable" value={values.email}
+              onChange={handleChange} label="Equipment is Rentable">
+
+            </Switch>
           <Grid item xs={12}>
             <FormControlLabel
               control={<Checkbox value="allowExtraEmails" color="primary" />}
