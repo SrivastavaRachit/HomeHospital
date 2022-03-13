@@ -3,9 +3,9 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Main from "./components/main";
 import Home from "./components/main/Home";
 import Login from "./components/main/Login";
-import Header from "./components/main/Header";
+import Header from "./components/main/header";
 import Footer from "./components/main/Footer";
-import SignUp from "./components/main/SignUp";
+import SignUp from "./components/main/signup";
 import BrowsEquipment from "./components/main/BrowsEquipment";
 import Admin from "./components/admin";
 import AddEquipment from "./components/admin/addequipment";
@@ -28,11 +28,10 @@ function App() {
             <Route element={<Header />} path="Header" />
             <Route element={<Footer />} path="Footer" />
             <Route element={<SignUp />} path="SignUp" />
-            <Route element={<BrowsEquipment />} path="BrowsEquipment" />
+            <Route element={<BrowsEquipment />} path="browseEquipment" />
             <Route element={<EquipmentDetail />} path="EquipmentDetail" />
             <Route element={<Product />} path="Product" />
             <Route element={<NotFound />} path="NotFound" />
-
           </Route>
           {/*
           </Route>
@@ -40,12 +39,10 @@ function App() {
             <Route element={<resetPassword/>} path="resetPassword"/>
           </Route> */}
 
-
           <Route element={<Admin />} path="admin">
-            <Route element={<AdminDashboard />} path="dashboard" >
+            <Route element={<AdminDashboard />} path="dashboard">
               <Route element={<AddEquipment />} path="addequipment" />
             </Route>
-
           </Route>
           {/* <Route element={<Admin/>} path="admin">
             <Route element={<addequipment/>} path="addequipment" />
