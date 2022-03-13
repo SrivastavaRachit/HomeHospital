@@ -78,7 +78,7 @@ export default function AddEquipment() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign up
+            Add Equipment
           </Typography>
           <Formik initialValues={userForm} onSubmit={addequipmentSubmit}>
       {({values, handleChange, handleSubmit}) => (
@@ -134,12 +134,12 @@ export default function AddEquipment() {
               onChange={handleChange} label="Equipment is Rentable">
 
             </Switch>
-          <Grid item xs={12}>
+          {/* <Grid item xs={12}>
             <FormControlLabel
               control={<Checkbox value="allowExtraEmails" color="primary" />}
               label="I want to receive inspiration, marketing promotions and updates via email."
             />
-          </Grid>
+          </Grid> */}
         </Grid>
         <Button
           type="submit"
@@ -147,13 +147,13 @@ export default function AddEquipment() {
           variant="contained"
           sx={{ mt: 3, mb: 2 }}
         >
-          Sign Up
+          Equipment Added
         </Button>
         <Grid container justifyContent="flex-end">
           <Grid item>
-            <Link href="#" variant="body2">
+            {/* <Link href="#" variant="body2">
               Already have an account? Sign in  
-            </Link>
+            </Link> */}
           </Grid>
         </Grid>
       </Box>

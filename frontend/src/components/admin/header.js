@@ -15,7 +15,7 @@ import MenuItem from '@mui/material/MenuItem';
 import {useNavigate} from 'react-router-dom';
 
 
-const pages = ['Products', 'Equipment', ''];
+const pages = ['Products', 'Services'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Header = () => {
