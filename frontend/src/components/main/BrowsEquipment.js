@@ -8,12 +8,14 @@ import { CircularProgress } from '@mui/material';
 
 export default function BrowsEquipment() {
 
+  
   const url = app_config.api_url;
 
   const [equipmentList, setEquipmentList] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+
     fetch(url + '/equipment/getall')
       .then(res => res.json())
       .then(data => {
@@ -30,7 +32,7 @@ export default function BrowsEquipment() {
     } else {
       return <div className="row">
         {
-          equipmentList.map((equipmentData) => {
+          equipmentList.map((equipment) => {
             return (
               <div class="col-md-3">
                 <div class="card shadow-sm">
