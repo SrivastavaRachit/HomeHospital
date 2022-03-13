@@ -1,11 +1,12 @@
-const Model = require("../models/userModel");
+const Model = require("../models/equipmentModel");
 const router = require("express").Router();
 
 router.post("/add", (req, res) => {
+  console.log(req.body);
   new Model(req.body)
     .save()
     .then((data) => {
-      console.log("user data saved!!");
+      console.log("equipment data saved!!");
       res.status(200).json(data);
     })
     .catch((err) => {
@@ -39,7 +40,6 @@ router.post("/checklogin", (req, res) => {
 router.get("/getall", (req, res) => {
   Model.find({})
     .then((data) => {
-      console.log("user data saved!!");
       res.status(200).json(data);
     })
     .catch((err) => {
@@ -51,7 +51,6 @@ router.get("/getall", (req, res) => {
 router.get("/getbyid/:id", (req, res) => {
   Model.findById(req.params.id)
     .then((data) => {
-      console.log("user data saved!!");
       res.status(200).json(data);
     })
     .catch((err) => {
@@ -63,7 +62,6 @@ router.get("/getbyid/:id", (req, res) => {
 router.put("/update/:id", (req, res) => {
   Model.findByIdAndUpdate(req.params.id, req.body)
     .then((data) => {
-      console.log("user data saved!!");
       res.status(200).json(data);
     })
     .catch((err) => {
@@ -75,7 +73,6 @@ router.put("/update/:id", (req, res) => {
 router.delete("/delete/:id", (req, res) => {
   Model.findByIdAndDelete(req.params.id)
     .then((data) => {
-      console.log("user data saved!!");
       res.status(200).json(data);
     })
     .catch((err) => {

@@ -14,6 +14,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
 import {Formik} from 'formik';
 import app_config from '../../config';
+import Swal from "sweetalert2";
 
 function Copyright(props) {
   return (
@@ -46,8 +47,15 @@ export default function Login() {
     })
     .then((res )=> res.json()).then(data =>{
       console.log(data);
-    })
+      Swal.fire({
+        icon: "success",
+        title: "success",
+        text: "user Added Successfully",
+      });
+    });
+    
   }
+
   // const handleSubmit = (event) => {
     // event.preventDefault();
   //   const data = new FormData(event.currentTarget);

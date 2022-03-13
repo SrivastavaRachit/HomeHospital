@@ -1,19 +1,20 @@
-import * as React from "react";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import app_config from "../../config";
-import { Formik } from "formik";
+import * as React from 'react';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import app_config from '../../config';
+import {Formik} from 'formik';
+import Swal from "sweetalert2";
 
 function Copyright(props) {
   return (
@@ -46,16 +47,21 @@ export default function SignUp() {
 
   
   const signupSubmit = (formdata) => {
-    fetch(url + "/user/add", {
-      method: "POST",
-      body: JSON.stringify(formdata),
-      headers: { ContentType: "application/json" },
+    fetch(url+'/user/add', {
+      method : 'POST',
+      body : JSON.stringify(formdata),
+      headers : {'ContentType': 'application/json'}
     })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+    .then((res )=> res.json()).then(data =>{
+      console.log(data);
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: "User Added Successfully",
       });
-  };
+    });
+    
+  }
 
   return (
     <ThemeProvider theme={theme}>
