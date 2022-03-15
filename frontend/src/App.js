@@ -3,7 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Main from "./components/main";
 import Home from "./components/main/Home";
 import Login from "./components/main/Login";
-import Header from "./components/main/header";
+import Header from "./components/main/Header";
 import Footer from "./components/main/Footer";
 import SignUp from "./components/main/signup";
 import BrowsEquipment from "./components/main/BrowsEquipment";
