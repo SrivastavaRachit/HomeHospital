@@ -28,7 +28,7 @@ function App() {
             <Route element={<Header />} path="Header" />
             <Route element={<Footer />} path="Footer" />
             <Route element={<SignUp />} path="SignUp" />
-            <Route element={<BrowsEquipment />} path="browseEquipment" />
+            <Route element={<BrowsEquipment />} path="BrowsEquipment" />
             <Route element={<EquipmentDetail />} path="EquipmentDetail" />
             <Route element={<Product />} path="Product" />
             <Route element={<NotFound />} path="NotFound" />
