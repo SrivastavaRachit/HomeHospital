@@ -8,6 +8,7 @@ import Footer from "./components/main/Footer";
 import SignUp from "./components/main/SignUp";
 import BrowsEquipment from "./components/main/BrowsEquipment";
 import Admin from "./components/admin";
+import User from "./components/user";
 import AddEquipment from "./components/admin/addequipment";
 import AdminDashboard from "./components/admin/dashboard";
 import Product from "./components/main/Product";
