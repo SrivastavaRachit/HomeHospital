@@ -65,7 +65,7 @@ function App() {
           </Route> */}
           <Route element={<User/>} path="user">
             {/* <Route element={<Footer/>} path="footer"/>    */}
-            <Route element={<Checkout/>} path="Checkout"/>
+            <Route element={<Checkout/>} path="checkout"/>
           </Route>
           {/* <Route element={<User/>} path="user">
             <Route element={<Header/>} path="header"/>
