@@ -1,20 +1,58 @@
 import React from 'react'
 import '../../stylesheet/EquipmentDetail.css';
 
+import Rating from '@mui/material/Rating';
+import Box from '@mui/material/Box';
+import StarIcon from '@mui/icons-material/Star';
+
+const labels = {
+  0.5: 'Useless',
+  1: 'Useless+',
+  1.5: 'Poor',
+  2: 'Poor+',
+  2.5: 'Ok',
+  3: 'Ok+',
+  3.5: 'Good',
+  4: 'Good+',
+  4.5: 'Excellent',
+  5: 'Excellent+',
+};
+
 export default function EquipmentDetail() {
+  const [value, setValue] = React.useState(2);
+  const [hover, setHover] = React.useState(-1);
   return (
     <div>
       <div className='cont'>
-<div class="card mb-3">
+        <div class="card mb-3">
   <div class="row g-0">
     <div class="col-md-4">
-      <img src="https://thecinemaholic.com/wp-content/uploads/2022/02/ce2dbe4a592b7f05ea4438f2327288c2e1670052-1920x1080-1.jpg" class="img-fluid rounded-start"/>
+      <img src="https://image.shutterstock.com/image-photo/medicine-doctor-stethoscope-hand-touching-600w-649070965.jpg"/>
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <h5 class="card-title"></h5>
+        <div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Title</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Price</a>
+  <a href="#" class="list-group-item list-group-item-action list-group-item-dark">Description</a>
+</div>
+  
+        <Rating
+      name="hover-feedback"
+      value={value}
+      precision={0.5}
+      onChange={(event, newValue) => {
+        setValue(newValue);
+      }}
+      onChangeActive={(event, newHover) => {
+        setHover(newHover);
+      }}
+      emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+    />
+    {value !== null && (
+      <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
+    )}
       </div>
     </div>
   </div>

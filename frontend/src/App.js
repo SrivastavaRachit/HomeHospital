@@ -3,16 +3,18 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Main from "./components/main";
 import Home from "./components/main/Home";
 import Login from "./components/main/Login";
-import Header from "./components/main/header";
+import Header from "./components/main/Header";
 import Footer from "./components/main/Footer";
-import SignUp from "./components/main/signup";
+import SignUp from "./components/main/SignUp";
 import BrowsEquipment from "./components/main/BrowsEquipment";
 import Admin from "./components/admin";
+import User from "./components/user";
 import AddEquipment from "./components/admin/addequipment";
 import AdminDashboard from "./components/admin/dashboard";
 import Product from "./components/main/Product";
 import NotFound from "./components/main/NotFound";
 import EquipmentDetail from "./components/main/EquipmentDetail";
+import Checkout from "./components/user/Checkout";
 // import User from "./components/user";
 // import path from "node:path/posix";
 // import Header from "./components/user/header";
@@ -28,7 +30,7 @@ function App() {
             <Route element={<Header />} path="Header" />
             <Route element={<Footer />} path="Footer" />
             <Route element={<SignUp />} path="SignUp" />
-            <Route element={<BrowsEquipment />} path="browseEquipment" />
+            <Route element={<BrowsEquipment />} path="BrowsEquipment" />
             <Route element={<EquipmentDetail />} path="EquipmentDetail" />
             <Route element={<Product />} path="Product" />
             <Route element={<NotFound />} path="NotFound" />
@@ -61,10 +63,11 @@ function App() {
           <Route element={<User/>} path="user">
             <Route element={<AdminDashboard/>} path="dashboard"/>
           </Route> */}
-          {/* <Route element={<User/>} path="user">
-            <Route element={<Footer/>} path="footer"/>
-          </Route>
           <Route element={<User/>} path="user">
+            {/* <Route element={<Footer/>} path="footer"/>    */}
+            <Route element={<Checkout/>} path="checkout"/>
+          </Route>
+          {/* <Route element={<User/>} path="user">
             <Route element={<Header/>} path="header"/>
           </Route> */}
           <Route exact element={<Navigate to="/main/home" />} path="" />
