@@ -157,6 +157,17 @@ export default function AddEquipment() {
                       autoComplete="tags"
                     />
                   </Grid>
+                  <Grid item xs={12} sm={6}>
+                    <TextField
+                      required
+                      fullWidth
+                      id="category"
+                      label="category"
+                      value={values.category}
+                      onChange={handleChange}
+                      autoComplete="category"
+                    />
+                    </Grid>
 
                   {/* <Grid item xs={12}>
             <FormControlLabel
