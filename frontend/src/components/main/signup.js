@@ -15,7 +15,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import app_config from "../../config";
 import { Formik } from "formik";
 import Swal from "sweetalert2";
-import { useNavigate ,Link} from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Copyright(props) {
   return (
