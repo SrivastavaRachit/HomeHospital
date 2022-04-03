@@ -15,6 +15,7 @@ import { Formik } from "formik";
 import app_config from "../../config";
 import Swal from "sweetalert2";
 import { Link } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -38,6 +39,7 @@ const theme = createTheme();
 
 export default function Login() {
   const url = app_config.api_url;
+  const navigate = useNavigate();
 
   const userForm = {
     email: "",
@@ -45,19 +47,32 @@ export default function Login() {
   };
   const loginSubmit = (formdata) => {
     console.log(formdata);
-    fetch(url + "/user/add", {
+    fetch(url + "/user/checklogin", {
       method: "POST",
       body: JSON.stringify(formdata),
       headers: { ContentType: "application/json" },
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.status === 400) {
+          Swal.fire({
+            icon: "success",
+            title: "success",
+            text: "Logged in Successfully",
+          }).then(() => {
+            navigate('/main/BrowsEquipment')
+          })
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "error",
+            text: "Logged in Failed",
+          })
+        }
+        return res.json()
+      })
       .then((data) => {
         console.log(data);
-        Swal.fire({
-          icon: "success",
-          title: "success",
-          text: "user Added Successfully",
-        });
+        
       });
   };
 
@@ -155,7 +170,7 @@ export default function Login() {
                     </Grid>
                     <Grid item>
                       <Link to="/main/signup"  >
-                        {"Don't have an account? Sign Up"} 
+                        {"Don't have an account? Sign Up"}
                       </Link>
                     </Grid>
                   </Grid>
