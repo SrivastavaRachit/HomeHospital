@@ -20,7 +20,7 @@ const Header = () => {
 
   const pages = [
     { name: "Add Services", link: "/admin/addequipment" },
-    { name: "Add New Equipment", link: "/admin/dashboard/addequipment" },
+    { name: "Add New Equipment", link: "/admin/addequipment" },
   ];
 
   const settings = ["Profile", "Account", "Dashboard", "Logout"];

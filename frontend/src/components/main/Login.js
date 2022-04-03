@@ -53,7 +53,7 @@ export default function Login() {
       headers: { ContentType: "application/json" },
     })
       .then((res) => {
-        if (res.status === 400) {
+        if (res.status === 200) {
           Swal.fire({
             icon: "success",
             title: "success",
@@ -135,6 +135,8 @@ export default function Login() {
                     required
                     fullWidth
                     id="email"
+                    onChange={handleChange}
+                    value={values.email}
                     label="Email Address"
                     name="email"
                     autoComplete="email"
@@ -148,6 +150,8 @@ export default function Login() {
                     label="Password"
                     type="password"
                     id="password"
+                    onChange={handleChange}
+                    value={values.password}
                     autoComplete="current-password"
                   />
                   <FormControlLabel
