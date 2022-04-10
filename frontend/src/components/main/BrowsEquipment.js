@@ -5,9 +5,12 @@ import { useEffect } from "react";
 import app_config from "../../config";
 import EquipmentDetail from "./EquipmentDetail";
 import { CircularProgress } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export default function BrowsEquipment() {
   const url = app_config.api_url;
+
+  const navigate = useNavigate();
 
   const [equipmentList, setEquipmentList] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -42,17 +45,20 @@ export default function BrowsEquipment() {
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
                         <button
+                          onClick={(e) =>
+                            navigate("/main/EquipmentDetail/" + equipment._id)
+                          }
                           type="button"
                           class="btn btn-sm btn-outline-secondary"
                         >
                           View
                         </button>
-                        <button
+                        {/* <button
                           type="button"
                           class="btn btn-sm btn-outline-secondary"
                         >
                           Edit
-                        </button>
+                        </button> */}
                       </div>
                       <small class="text-muted"></small>
                     </div>

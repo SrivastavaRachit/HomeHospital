@@ -14,11 +14,16 @@ const Admin = () => {
       icon: <AccountCircle />,
       link: "/admin/profile",
     },
+    {
+      name: "Add Equipment",
+      icon: <AccountCircle />,
+      link: "/admin/addequipment",
+    },
   ];
 
   return (
     <>
-      <Sidebar sideOptions={sideOptions}>
+      <Sidebar sideOptions={sideOptions} title={"Admin Dashboard"}>
         <Outlet />
       </Sidebar>
     </>
