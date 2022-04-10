@@ -15,6 +15,7 @@ import { Formik } from "formik";
 import app_config from "../../config";
 import Swal from "sweetalert2";
 import { Link } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -38,6 +39,7 @@ const theme = createTheme();
 
 export default function Login() {
   const url = app_config.api_url;
+  const navigate = useNavigate();
 
   const userForm = {
     email: "",
@@ -45,19 +47,32 @@ export default function Login() {
   };
   const loginSubmit = (formdata) => {
     console.log(formdata);
-    fetch(url + "/user/add", {
+    fetch(url + "/user/checklogin", {
       method: "POST",
       body: JSON.stringify(formdata),
       headers: { ContentType: "application/json" },
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.status === 200) {
+          Swal.fire({
+            icon: "success",
+            title: "success",
+            text: "Logged in Successfully",
+          }).then(() => {
+            navigate('/main/BrowsEquipment')
+          })
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "error",
+            text: "Logged in Failed",
+          })
+        }
+        return res.json()
+      })
       .then((data) => {
         console.log(data);
-        Swal.fire({
-          icon: "success",
-          title: "success",
-          text: "user Added Successfully",
-        });
+        
       });
   };
 
@@ -81,7 +96,7 @@ export default function Login() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: "url(https://source.unsplash.com/random)",
+            // backgroundImage: "url(https://source.unsplash.com/random)",
             backgroundRepeat: "no-repeat",
             backgroundColor: (t) =>
               t.palette.mode === "light"
@@ -120,6 +135,8 @@ export default function Login() {
                     required
                     fullWidth
                     id="email"
+                    onChange={handleChange}
+                    value={values.email}
                     label="Email Address"
                     name="email"
                     autoComplete="email"
@@ -133,6 +150,8 @@ export default function Login() {
                     label="Password"
                     type="password"
                     id="password"
+                    onChange={handleChange}
+                    value={values.password}
                     autoComplete="current-password"
                   />
                   <FormControlLabel
@@ -154,7 +173,7 @@ export default function Login() {
                       </Link>
                     </Grid>
                     <Grid item>
-                      <Link to="/main/signup" variant="body2">
+                      <Link to="/main/signup"  >
                         {"Don't have an account? Sign Up"}
                       </Link>
                     </Grid>

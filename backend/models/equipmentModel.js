@@ -5,6 +5,7 @@ const schema = new mongoose.Schema({
   price: String,
   rentable: Boolean,
   thumbnail: String,
+  category: String,
   createdAt: { type: Date, default: new Date() },
   tags: Array,
 });

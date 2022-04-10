@@ -24,7 +24,7 @@ router.post("/checklogin", (req, res) => {
               if(data.password == formdata.password){
                 res.status(200).json(data);
               }else{
-                res.status(500).json({status : 'error'});
+                res.status(400).json({status : 'error'});
               }
           }else{
             res.status(500).json({status : 'error'});

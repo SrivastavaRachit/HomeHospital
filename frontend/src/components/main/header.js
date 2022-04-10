@@ -11,7 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-
+// import Footer from "../main/Footer";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
@@ -20,7 +20,7 @@ const Header = () => {
 
   const pages = [
     { name: "Add Services", link: "/admin/addequipment" },
-    { name: "Add New Equipment", link: "/admin/dashboard/addequipment" },
+    { name: "Add New Equipment", link: "/admin/addequipment" },
   ];
 
   const settings = ["Profile", "Account", "Dashboard", "Logout"];

@@ -42,9 +42,9 @@ function App() {
           </Route> */}
 
           <Route element={<Admin />} path="admin">
-            <Route element={<AdminDashboard />} path="dashboard">
+            <Route element={<AdminDashboard />} path="dashboard" />
               <Route element={<AddEquipment />} path="addequipment" />
-            </Route>
+            
           </Route>
           {/* <Route element={<Admin/>} path="admin">
             <Route element={<addequipment/>} path="addequipment" />

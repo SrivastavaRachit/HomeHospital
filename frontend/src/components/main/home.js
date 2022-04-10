@@ -7,16 +7,22 @@ export default function Home() {
       <section class="hero">
         <header id="header"></header>
         <header class="hero-header">
-          <h1 class="hero-title">Home Hospital</h1>
+          
+
         </header>
-        <footer class="hero-footer">
+        <div className="abcd">
+          <div className="hjk">
           <Link class="button button-primary" to="/main/Login">
             Login
           </Link>
-          <Link class="button" to="/main/SignUp">
+          <Link class="button button-primary" to="/main/SignUp">
             SignUp
           </Link>
-        </footer>
+          </div>
+          <h1 class="hero-title">Home Hospital</h1>
+          </div>
+       
+        
       </section>
       <article></article>
     </div>

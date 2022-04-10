@@ -35,7 +35,7 @@ body {
 
 .hero-title {
   max-width: 16em;
-  margin: 0;
+  margin-top: 17%;
   font-size: 12vh;
   font-weight: bold;
   line-height: 0.9;
@@ -67,4 +67,15 @@ article {
   max-width: 36em;
   margin: 0 auto;
   padding: 1em;
+}
+.rachit{
+  padding-top: 20%;
+}
+
+.abcd{
+  padding-bottom:50% ;
+  
+}
+.hjk{
+  padding-left: 90%;
 }
