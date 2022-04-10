@@ -15,6 +15,7 @@ import Product from "./components/main/Product";
 import NotFound from "./components/main/NotFound";
 import EquipmentDetail from "./components/main/EquipmentDetail";
 import Checkout from "./components/user/Checkout";
+
 // import User from "./components/user";
 // import path from "node:path/posix";
 // import Header from "./components/user/header";
