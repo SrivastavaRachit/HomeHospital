@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../stylesheet/EquipmentDetail.css";
 
 import Rating from "@mui/material/Rating";
 import Box from "@mui/material/Box";
 import StarIcon from "@mui/icons-material/Star";
+import { useParams } from "react-router-dom";
+import app_config from "../../config";
 
 const labels = {
   0.5: "Useless",
@@ -21,9 +23,38 @@ const labels = {
 export default function EquipmentDetail() {
   const [value, setValue] = React.useState(2);
   const [hover, setHover] = React.useState(-1);
+
+  const [equipmentData, setEquipmentData] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  const url = app_config.api_url;
+
+  const { id } = useParams();
+
+  const fetchData = () => {
+    fetch(url + "/equipment/getbyid/" + id)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setEquipmentData(data);
+        setLoading(false);
+      });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const displayData = () => {
+    if (!loading) {
+      return <div>{equipmentData.title}</div>;
+    }
+  };
+
   return (
     <div>
-      <div className="cont">
+      {displayData()}
+      {/* <div className="cont">
         <div class="card mb-3">
           <div class="row g-0">
             <div class="col-md-4">
@@ -76,7 +107,7 @@ export default function EquipmentDetail() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
