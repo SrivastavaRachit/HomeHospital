@@ -1,15 +1,14 @@
 const mongoose = require("../connection");
 const schema = new mongoose.Schema({
-  title: String,
+  name: String,
+  monthlyprice: String,
   description: String,
-  price: String,
-  rentable: Boolean,
-  thumbnail: String,
   category: String,
+  termscondition: String,
   createdAt: { type: Date, default: new Date() },
-  tags: Array,
+  isAdmin : { type: Boolean, default: false },
 });
 
-const model = mongoose.model("equipment", schema);
+const model = mongoose.model("users", schema);
 
 module.exports = model;
